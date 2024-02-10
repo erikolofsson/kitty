@@ -925,7 +925,7 @@ class Window:
                 log_error(f'Failed to write to child {self.id} as it does not exist')
 
     def title_updated(self) -> None:
-        update_window_title(self.os_window_id, self.tab_id, self.id, self.title)
+        update_window_title(self.os_window_id, self.tab_id, self.id, "kitty: " + self.title)
         t = self.tabref()
         if t is not None:
             t.title_changed(self)
